@@ -25,7 +25,7 @@ public class CustomersStatsCalculatorTest {
 
     @Test
     public void testCalculateStats() throws Exception {
-        CustomersStats stats = CustomersStatsCalculator.calculateStats(customers);
+        CustomersStats stats = new CustomersStatsCalculator().calculateStats(customers);
         assertNotNull(stats);
         assertEquals(233658, stats.getBiggestClient());
         assertEquals(BigDecimal.valueOf(357.), stats.getTotalOverall());
