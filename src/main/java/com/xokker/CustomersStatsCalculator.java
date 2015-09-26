@@ -45,7 +45,7 @@ public class CustomersStatsCalculator {
     }
 
     private Stream<BigDecimal> sortedOrders(List<Customers.Customer> customers,
-                                                   Comparator<BigDecimal> comparator) {
+                                            Comparator<BigDecimal> comparator) {
         return customers.stream()
                 .flatMap(c -> c.getOrders().getOrder().stream())
                 .map(this::orderTotal)
