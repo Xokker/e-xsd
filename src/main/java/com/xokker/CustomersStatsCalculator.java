@@ -27,7 +27,7 @@ public class CustomersStatsCalculator {
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         int biggestClient = customers.stream()
-                .sorted((c1, c2) -> customerTotal(c1).compareTo(customerTotal(c2)))
+                .sorted((c1, c2) -> customerTotal(c2).compareTo(customerTotal(c1)))
                 .findFirst().get()
                 .getId().intValue();
 
