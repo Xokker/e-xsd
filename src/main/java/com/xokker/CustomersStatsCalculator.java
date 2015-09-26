@@ -1,6 +1,5 @@
 package com.xokker;
 
-import org.apache.commons.lang3.tuple.Pair;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -39,15 +38,7 @@ public class CustomersStatsCalculator {
                 .mapToInt(c -> c.getOrders().getOrder().size())
                 .sum();
 
-        // TODO: maybe simpler solution?
-        Pair<Integer, BigDecimal> countAndSum = customers.stream()
-                .flatMap(c -> c.getOrders().getOrder().stream())
-                .map(this::orderTotal)
-                .reduce(Pair.of(0, BigDecimal.ZERO),
-                        (p, d) -> Pair.of(p.getLeft() + 1, p.getRight().add(d)),
-                        (p1, p2) -> Pair.of(p1.getLeft() + p2.getLeft(), p1.getRight().add(p2.getRight())));
-        BigDecimal count = BigDecimal.valueOf(countAndSum.getLeft());
-        BigDecimal avgTotalOfOrders = countAndSum.getRight().divide(count, 2, RoundingMode.HALF_UP);
+        BigDecimal avgTotalOfOrders = totalOverall.divide(BigDecimal.valueOf(numberOfOrders), 2, RoundingMode.HALF_UP);
 
         return new CustomersStats(totalOverall, biggestClient, totalOfBiggestOrder,
                 totalOfSmallestOrder, numberOfOrders, avgTotalOfOrders);
