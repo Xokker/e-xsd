@@ -3,6 +3,9 @@ package com.xokker;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.math.BigDecimal;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 /**
@@ -24,5 +27,11 @@ public class CustomersStatsCalculatorTest {
     public void testCalculateStats() throws Exception {
         CustomersStats stats = CustomersStatsCalculator.calculateStats(customers);
         assertNotNull(stats);
+        assertEquals(233658, stats.getBiggestClient());
+        assertEquals(BigDecimal.valueOf(357.), stats.getTotalOverall());
+        assertEquals(2, stats.getNumberOfOrders());
+        assertEquals(BigDecimal.valueOf(150.), stats.getTotalOfSmallestOrder());
+        assertEquals(BigDecimal.valueOf(207.), stats.getTotalOfBiggestOrder());
+        assertEquals(BigDecimal.valueOf(17850, 2), stats.getAvgTotalOfOrders());
     }
 }

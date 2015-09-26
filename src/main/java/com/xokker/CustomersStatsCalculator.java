@@ -29,9 +29,9 @@ public class CustomersStatsCalculator {
                 .findFirst().get()
                 .getId().intValue();
 
-        BigDecimal totalOfBiggestOrder = sortedOrders(customers, naturalOrder()).findFirst().get();
+        BigDecimal totalOfBiggestOrder = sortedOrders(customers, reverseOrder()).findFirst().get();
 
-        BigDecimal totalOfSmallestOrder = sortedOrders(customers, reverseOrder()).findFirst().get();
+        BigDecimal totalOfSmallestOrder = sortedOrders(customers, naturalOrder()).findFirst().get();
 
         int numberOfOrders = customers.stream()
                 .mapToInt(c -> c.getOrders().getOrder().size())
