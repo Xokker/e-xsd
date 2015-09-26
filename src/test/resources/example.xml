@@ -1,0 +1,33 @@
+<customers>
+    <customer>
+        <id>233658</id>
+        <name>Игорь Владимирович</name>
+        <orders>
+            <order>
+                <id>233658</id>
+                <positions>
+                    <position>
+                        <id>233658</id>
+                        <price>30.0</price>
+                        <count>5</count>
+                    </position>
+                </positions>
+            </order>
+            <order>
+                <id>233660</id>
+                <positions>
+                    <position>
+                        <id>233758</id>
+                        <price>31.0</price>
+                        <count>6</count>
+                    </position>
+                    <position>
+                        <id>233759</id>
+                        <price>21.0</price>
+                        <count>1</count>
+                    </position>
+                </positions>
+            </order>
+        </orders>
+    </customer>
+</customers>
