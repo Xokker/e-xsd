@@ -18,14 +18,14 @@ public class CustomersStats {
     private final int numberOfOrders;
     private final BigDecimal avgTotalOfOrders;
 
-    public CustomersStats(BigDecimal avgTotalOfOrders, int numberOfOrders, BigDecimal totalOfSmallestOrder,
-                          BigDecimal totalOfBiggestOrder, int biggestClient, BigDecimal totalOverall) {
-        this.avgTotalOfOrders = avgTotalOfOrders;
-        this.numberOfOrders = numberOfOrders;
-        this.totalOfSmallestOrder = totalOfSmallestOrder;
-        this.totalOfBiggestOrder = totalOfBiggestOrder;
-        this.biggestClient = biggestClient;
+    public CustomersStats(BigDecimal totalOverall, int biggestClient, BigDecimal totalOfBiggestOrder,
+                          BigDecimal totalOfSmallestOrder, int numberOfOrders, BigDecimal avgTotalOfOrders) {
         this.totalOverall = totalOverall;
+        this.biggestClient = biggestClient;
+        this.totalOfBiggestOrder = totalOfBiggestOrder;
+        this.totalOfSmallestOrder = totalOfSmallestOrder;
+        this.numberOfOrders = numberOfOrders;
+        this.avgTotalOfOrders = avgTotalOfOrders;
     }
 
     public BigDecimal getTotalOverall() {
